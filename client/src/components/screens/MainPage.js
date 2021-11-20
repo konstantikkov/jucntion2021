@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useWebSocket } from "../hooks/ws.hook";
+import { useWebSocket } from "../../hooks/ws.hook";
 
 export const MainPage = () => {
     const [co2, setCo2] = useState(0)

@@ -1,5 +1,59 @@
 .App {
-  text-align: center;
+  display: flex;
+}
+.Active{
+  width:90%;
+  transition: width 1s;
+}
+.Inactive{
+  width: 5%;
+  transition: width 1s;
 }
 
+.Global{
+  background-color: aqua;
+}
 
+.Local{
+  background-color: peru;
+}
+
+.Company{
+  background-color: bisque;
+}
+.MainPlate{
+  fill: #9CB7A3;
+}
+
+.CountryPlate{
+  cursor: pointer;
+  fill: #9CB7A3;
+  transition: fill 1s;
+}
+
+.Country{
+  transform: translateY(10px);
+  transition: transform 1s ease-in-out;
+}
+
+.Country:hover{
+  transform: translateY(-10px);
+  transition: transform 1s ease-in-out;
+}
+
+.Country:hover .CountryPlate{
+  fill:#FFC909;
+  transition: fill 1s;
+}
+
+.CityDescription{
+  opacity: 0;
+}
+
+.Column{
+  cursor: pointer;
+}
+.Column:hover + .CityDescription{
+  transition: opacity 0.5s, transform 2s;
+  opacity: 1;
+}
