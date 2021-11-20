@@ -16,11 +16,6 @@ function App() {
 
     const {initialize, commit} = useWebSocket(message, setMessage, setCo2)
 
-    useEffect(async ()=> {
-        const client = prompt('user')
-        await initialize(client)
-    }, [])
-
 
     const [start, setStart] =useState(true)
 
@@ -54,7 +49,7 @@ function App() {
     return (
         <div className="App">
             <div className="MainLayer">
-                <ChatScreen co2={co2} message={message} commit={commit} expanded={screen === -1} expand={expand} class_={start?'ActiveStart':'Active'} />
+                <ChatScreen co2={co2} initialize={initialize} message={message} commit={commit} expanded={screen === -1} expand={expand} class_={start?'ActiveStart':'Active'} />
                 {
                     start&&<StartPage setStart={setStart} expanded={screen === -2} expand={expand} />
                 }
