@@ -4,7 +4,6 @@ import React from 'react'
 
 
 export const ChatScreen = ({co2, message, commit, expanded, expand, class_}) => {
-
     return(
         <div onClick={() => !expanded?expand(-1):''} className={`${!expanded?'Inactive':class_} Chat`} >
             <div>
