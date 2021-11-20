@@ -1,4 +1,4 @@
-.App {
+.MainLayer {
   display: flex;
 }
 .Active{
@@ -56,4 +56,36 @@
 .Column:hover + .CityDescription{
   transition: opacity 0.5s, transform 2s;
   opacity: 1;
+}
+
+
+.BadEvent{
+  background-color: red;
+}
+.GoodEvent{
+  background-color: green;
+}
+.Event{
+  width: 100px;
+  animation: 2s out forwards;
+}
+.NativeChat{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+@keyframes out {
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
 }
