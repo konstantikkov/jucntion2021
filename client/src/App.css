@@ -1,5 +1,123 @@
-.App {
-  text-align: center;
+.App{
+  width: 100%;
+}
+.MainLayer {
+  width: 100%;
+  display: flex;
+}
+.Active{
+  width:85%;
+  transition: width 1s;
+}
+
+.Active > .Map{
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.Inactive{
+  width: 5%;
+  transition: width 1s;
+}
+
+.Inactive > .Map{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.StartPage{
+  background-color: #FFC909;
+}
+
+.ActiveStart{
+  width:95%;
+  transition: width 1s;
+}
+
+.InactiveStart{
+  width: 5%;
+  transition: width 1s;
+}
+
+.Global{
+  z-index: 100;
+  background-color: aqua;
+}
+
+.Local{
+  z-index: 500;
+  background-color: peru;
+}
+
+.Company{
+  z-index: 1000;
+  background-color: bisque;
+}
+.MainPlate{
+  fill: #9CB7A3;
+}
+
+.CountryPlate{
+  cursor: pointer;
+  fill: #9CB7A3;
+  transition: fill 1s;
+}
+
+.Country{
+  transform: translateY(10px);
+  transition: transform 1s ease-in-out;
+}
+
+.Country:hover{
+  transform: translateY(-10px);
+  transition: transform 1s ease-in-out;
+}
+
+.Country:hover .CountryPlate{
+  fill:#FFC909;
+  transition: fill 1s;
+}
+
+.CityDescription{
+  opacity: 0;
+}
+
+.Column{
+  cursor: pointer;
+}
+.Column:hover + .CityDescription{
+  transition: opacity 0.5s, transform 2s;
+  opacity: 1;
 }
 
 
+.BadEvent{
+  background-color: red;
+}
+.GoodEvent{
+  background-color: green;
+}
+.Event{
+  width: 100px;
+  animation: 2s out forwards;
+}
+.NativeChat{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+@keyframes out {
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}

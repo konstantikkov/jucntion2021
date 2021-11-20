@@ -1,10 +1,13 @@
-export const JsonToMap = (jsonName) => {
+import CountriesCities from './countries-cities'
+import CitiesDescriptions from './cities-descriptions'
+import CitiesCompanies from './cities-companies'
 
-    const json = JSONS[jsonName]
-    const map = new Map();
+const JSONS = {
+    'countries-cities': CountriesCities,
+    'cities-descriptions': CitiesDescriptions,
+    'cities-companies': CitiesCompanies
+};
 
-    json.forEach(item=>{
-        map.set(item.key, item?.value || new Map(item.entries))
-    });
-    return map
+export const JsonToObject = (jsonName) => {
+    return JSONS[jsonName]
 };
