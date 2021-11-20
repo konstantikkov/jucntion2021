@@ -1,24 +1,56 @@
+.App{
+  width: 100%;
+}
 .MainLayer {
+  width: 100%;
   display: flex;
 }
 .Active{
-  width:90%;
+  width:85%;
   transition: width 1s;
 }
+
+.Active > .Map{
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 .Inactive{
   width: 5%;
   transition: width 1s;
 }
 
+.Inactive > .Map{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.StartPage{
+  background-color: #FFC909;
+}
+
+.ActiveStart{
+  width:95%;
+  transition: width 1s;
+}
+
+.InactiveStart{
+  width: 5%;
+  transition: width 1s;
+}
+
 .Global{
+  z-index: 100;
   background-color: aqua;
 }
 
 .Local{
+  z-index: 500;
   background-color: peru;
 }
 
 .Company{
+  z-index: 1000;
   background-color: bisque;
 }
 .MainPlate{

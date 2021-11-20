@@ -1,20 +1,12 @@
-import React, {useEffect} from 'react'
-import {useWebSocket} from "../../../hooks/ws.hook";
+import React from 'react'
 
 
 
 
-export const ChatScreen = ({co2, message, commit, expanded, expand}) => {
-
-
-    if(!expanded)
-        return <div onClick={() => expand(-1)} className='Inactive Company'>
-
-        </div>
-
+export const ChatScreen = ({co2, message, commit, expanded, expand, class_}) => {
 
     return(
-        <div className='Active Chat'>
+        <div onClick={() => !expanded?expand(-1):''} className={`${!expanded?'Inactive':class_} Chat`} >
             <div>
                 <div>{co2}</div>
                 <div>
@@ -24,11 +16,6 @@ export const ChatScreen = ({co2, message, commit, expanded, expand}) => {
                     <div onClick={()=>commit(-1, 'посадить дерево')}>grow</div>
                     <div onClick={()=>commit(-2, 'посадить дерево')}>groww</div>
                     <div onClick={()=>commit(-3, 'посадить дерево')}>growww</div>
-                </div>
-                <div>
-                    {
-                        toString(message.client) + toString(message.value)
-                    }
                 </div>
             </div>
         </div>

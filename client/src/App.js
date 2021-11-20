@@ -7,6 +7,8 @@ import {JsonToObject} from "./jsons";
 import {useWebSocket} from "./hooks/ws.hook";
 import {Event} from "./components/chat/event";
 import {ChatScreen} from "./components/screens/chat-screen";
+import {StartPage} from "./components/screens/start-page";
+
 
 function App() {
     const [co2, setCo2] = useState(0)
@@ -20,10 +22,13 @@ function App() {
     }, [])
 
 
-    const [screen, changeScreen] = useState(0)
+    const [start, setStart] =useState(true)
 
-    const [allCountries, setAllCountries] = useState(()=>JsonToObject('countries-cities'));
-    const [allDescriptions, setAllDescriptions] = useState(()=>JsonToObject('cities-descriptions'));
+    const [screen, changeScreen] = useState(-2)
+
+    const [allCompanies, setAllCompanies] = useState(() => JsonToObject('cities-companies'))
+    const [allCountries, setAllCountries] = useState(() => JsonToObject('countries-cities'));
+    const [allDescriptions, setAllDescriptions] = useState(() => JsonToObject('cities-descriptions'));
 
     const [countryName, setCountryName] = useState('at')
     const [cityName, setCityName] = useState('wien')
@@ -36,21 +41,30 @@ function App() {
     }, [countryName])
 
     useEffect(()=>{
-        setSelectedCity(allCountries?.[countryName]?.[cityName])
+        setSelectedCity({
+            name: cityName,
+            entries: allCompanies?.[cityName]
+        })
     }, [cityName])
 
 
     const expand = useCallback((value)=>{
         changeScreen(value)
     }, [])
-    console.log(message)
     return (
         <div className="App">
             <div className="MainLayer">
-                <ChatScreen co2={co2} message={message} commit={commit} expanded={screen === -1} expand={expand} />
-                <GlobalMapScreen countries={allCountries} setCountry={setCountryName} setCity={setCityName} expanded={screen === 0} expand={expand} />
-                <LocalMapScreen country={selectedCountry} setCountry={setCountryName} setCity={setCityName}  expanded={screen === 1} expand={expand} />
-                <CompanyScreen city={cityName} expanded={screen === 2} expand={expand} />
+                <ChatScreen co2={co2} message={message} commit={commit} expanded={screen === -1} expand={expand} class_={start?'ActiveStart':'Active'} />
+                {
+                    start&&<StartPage setStart={setStart} expanded={screen === -2} expand={expand} />
+                }
+                {
+                    !start&&<React.Fragment>
+                        <GlobalMapScreen countries={allCountries} setCountry={setCountryName} setCity={setCityName} expanded={screen === 0} expand={expand} />
+                        <LocalMapScreen country={selectedCountry} setCountry={setCountryName} setCity={setCityName}  expanded={screen === 1} expand={expand} />
+                        <CompanyScreen city={selectedCity} expanded={screen === 2} expand={expand} />
+                    </React.Fragment>
+                }
             </div>
             <div className='NativeChat'>
                 {

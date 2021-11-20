@@ -11,14 +11,9 @@ export const LocalMapScreen = ({country, setCountry, setCity, expanded, expand})
         expand(2)
     },[])
 
-    console.log(country)
-    if(!expanded)
-        return <div onClick={() => expand(1)} className='Inactive Local'>
-            toggled
-        </div>
 
     return(
-        <div className='Active Local'>
+        <div onClick={() => !expanded?expand(1):''} className={`${!expanded?'Inactive':'Active'} Local`}>
             <Map crop={1.4} viewBox='0 0 1440 1024' countries={country} clickCountry={()=>{}} clickCity={clickCity} namespace='local'/>
         </div>
     )

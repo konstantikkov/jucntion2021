@@ -17,12 +17,8 @@ export const GlobalMapScreen = ({countries, setCountry, setCity, expanded, expan
         expand(2)
         setCity(value)
     },[])
-    if(!expanded)
-        return <div onClick={() => expand(0)} className='Inactive Global'>
-            toggled
-        </div>
     return(
-        <div className='Active Global'>
+        <div onClick={() => !expanded?expand(0):''} className={`${!expanded?'Inactive':'Active'} Global`}>
             <Map europe crop={1.4} viewBox='0 0 1440 1024' countries={countries} clickCountry={clickCountry} clickCity={clickCity} namespace='global'/>
         </div>
     )
