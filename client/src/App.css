@@ -41,7 +41,7 @@
 
 .Global{
   z-index: 100;
-  background-color: aqua;
+  background-color: white;
 }
 
 .Local{
@@ -64,7 +64,6 @@
 }
 
 .Country{
-  transform: translateY(10px);
   transition: transform 1s ease-in-out;
 }
 
@@ -79,14 +78,24 @@
 }
 
 .CityDescription{
+   opacity: 0;
+ }
+
+.CityDescriptionMini{
   opacity: 0;
 }
 
 .Column{
   cursor: pointer;
 }
+
+.Country:hover .CityDescriptionMini{
+  transition: opacity 0.5s, transform 4s;
+  opacity: 1;
+}
+
 .Column:hover + .CityDescription{
-  transition: opacity 0.5s, transform 2s;
+  transition: opacity 0.5s, transform 4s;
   opacity: 1;
 }
 
