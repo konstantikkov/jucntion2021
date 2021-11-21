@@ -1,9 +1,6 @@
 body{
     overflow-x: hidden;
 }
-
-
-.Global{
-    display: flex;
-    justify-content: center;
+.Map{
+    margin: auto;
 }
