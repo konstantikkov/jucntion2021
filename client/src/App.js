@@ -12,7 +12,7 @@ import { StartPage } from "./components/screens/start-page";
 import bg from "./assets/background.svg"
 
 function App() {
-    const [co2, setCo2] = useState(0)
+    const [co2, setCo2] = useState(50)
     const [message, setMessage] = useState(() => [])
 
     const { initialize, commit } = useWebSocket(message, setMessage, setCo2)
@@ -43,6 +43,10 @@ function App() {
         })
     }, [cityName])
 
+    if(message.length>3){
+        let old_message = message.slice(-3)
+        setMessage(old_message)
+    }
 
     const expand = useCallback((value) => {
         changeScreen(value)
