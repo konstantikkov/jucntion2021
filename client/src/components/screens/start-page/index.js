@@ -15,7 +15,7 @@ export const StartPage = ({ setStart, expanded, expand }) => {
             <div className={s.wrapper}>
                 <div className={s.info_side}>
                     <div className={s.title}>
-                        Project name
+                        CO₂ in Europe
                     </div>
                     <div className={s.content}>
                         We present to you an interactive map of Europe, on which you can observe several companies and analyze their impact on the environment. We used a dataset that showed how much CO₂ companies of different fields emit. Using another dataset with sales we calculated the total amount of co2 companies produced versus the money they earned. This graphical data give us a better understanding of how much we contaminate the planet. Additionally, you can read facts and environmental advice that were gathered from proven sources. Potential shareholders will be able to form a rough understanding of fields and make their comparisons.

@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const WebSocket = require('ws')
 
-const wss = new WebSocket.Server({port: 8888})
+const wss = new WebSocket.Server({ port: 8888 })
 
 let initializeCount = 50;
 
@@ -12,7 +12,7 @@ let persons = {
 
 }
 
-wss.on('connection', ws=>{
+wss.on('connection', ws => {
     ws.on("message", (value) => {
         let def = JSON.parse(value)
         const prev = persons[def.client]
@@ -20,15 +20,30 @@ wss.on('connection', ws=>{
         persons[def.client] = def.value + prev || 0
         console.log(persons, initializeCount)
 
-        if(initializeCount >= 20){
+        if (initializeCount >= 100) {
             wss.clients.forEach((client) => {
-                client.send(JSON.stringify({status: "redWon"}))
+                client.send(JSON.stringify({ status: "redWon" }))
             })
+
+            setTimeout(() => {
+                initializeCount = 50
+                def.count = initializeCount
+                wss.clients.forEach((client) => {
+                    client.send(JSON.stringify(def))
+                })
+            }, 6000)
         }
-        else if(initializeCount <= -20){
+        else if (initializeCount <= 0) {
             wss.clients.forEach((client) => {
-                client.send(JSON.stringify({status: "greenWon"}))
+                client.send(JSON.stringify({ status: "greenWon" }))
             })
+            setTimeout(() => {
+                initializeCount = 50
+                def.count = initializeCount
+                wss.clients.forEach((client) => {
+                    client.send(JSON.stringify(def))
+                })
+            }, 6000)
         }
         def.count = initializeCount
         wss.clients.forEach((client) => {
@@ -36,7 +51,7 @@ wss.on('connection', ws=>{
         })
     })
 
-    ws.send(JSON.stringify({count: initializeCount}))
+    ws.send(JSON.stringify({ count: initializeCount }))
 })
 
 
@@ -45,19 +60,19 @@ const PORT = 5000
 
 app.use(express.json({ extended: true }));
 
-if(process.env.NODE_ENV==='production'){
+if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
-    app.get('*', (req, res)=>{
+    app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
 
-async function  start(){
-    try{
-        app.listen(PORT, ()=> console.log(`App has been started on ${PORT}`))
+async function start() {
+    try {
+        app.listen(PORT, () => console.log(`App has been started on ${PORT}`))
     }
-    catch (e){
+    catch (e) {
         console.log('Server error', e.message)
         process.exit(1)
     }

@@ -4,7 +4,8 @@
   "description": "Some stuff for junction hackathon.",
   "main": "App.js",
   "scripts": {
-    "start": "node App.js"
+    "start": "cross-env NODE_ENV=production node App.js",
+    "kek": "node App.js"
   },
   "keywords": [
     "react",
@@ -14,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.6",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",

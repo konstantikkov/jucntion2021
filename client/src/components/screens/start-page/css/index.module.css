@@ -51,6 +51,11 @@
           align-items: center;
 }
 
+.wrapper .info_side .button_block .but {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .wrapper .info_side .button_block .but button {
   background: #fbff3f;
   border-radius: 50%;
@@ -66,6 +71,24 @@
 
 .wrapper .info_side .button_block .but button img {
   width: 50px;
+}
+
+.wrapper .info_side .button_block .but:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+.wrapper .info_side .button_block .but:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
 }
 
 .wrapper .info_side .button_block .but_text {

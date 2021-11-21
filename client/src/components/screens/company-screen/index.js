@@ -14,6 +14,11 @@ export const CompanyScreen = ({ type, setType, city, expanded, expand }) => {
     useEffect(() => {
         setType(city.entries[chosenCompany].type)
     }, [chosenCompany])
+
+    useEffect(() => {
+        setChosenCompany(0)
+        console.log(chosenCompany)
+    }, [city])
     return (
         <div
             onClick={() => !expanded ? expand(2) : ''}
@@ -30,12 +35,12 @@ export const CompanyScreen = ({ type, setType, city, expanded, expand }) => {
                 <div className="other">
 
                     <CompanyExpanded
-                        entry={city.entries[chosenCompany]}
+                        entry={city.entries[chosenCompany] ? city.entries[chosenCompany] : city.entries[0]}
                         type={type}
                     />
                     <Graphics
-                        total_sum={city.entries[chosenCompany].total_sum}
-                        per_euro={city.entries[chosenCompany].per_euro}
+                        total_sum={city.entries[chosenCompany]?.total_sum}
+                        per_euro={city.entries[chosenCompany]?.per_euro}
                     />
                 </div>
             </div>

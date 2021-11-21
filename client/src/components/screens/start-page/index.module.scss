@@ -46,6 +46,15 @@
                         width: 50px;
                     }
                 }
+                transition: 1s;
+                &:hover {
+                    filter: brightness(90%);
+                    transition: filter 0.5s;
+                }
+                &:active {
+                    filter: brightness(70%);
+                    transition: filter 0.5s;
+                }
             }
             .but_text {
                 font-size: 16px;
