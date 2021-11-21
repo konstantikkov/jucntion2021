@@ -5,7 +5,7 @@ export const useWebSocket = (message, setMessage, setCo2) => {
     const socket = useRef();
 
     const initialize = useCallback((client)=>{
-        socket.current = new WebSocket('ws://127.0.0.1:8888/ws')
+        socket.current = new WebSocket('ws://188.68.220.223:5000/:8888/ws')
         socket.current.onmessage = (async (value) => {
             const data = await JSON.parse(value.data)
             let message_old = message
