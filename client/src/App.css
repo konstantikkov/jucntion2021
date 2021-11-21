@@ -48,17 +48,23 @@
 
 .Global {
   z-index: 100;
-  background-color: white;
+  background-image: url(../../client/src/assets/background2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Local {
   z-index: 500;
-  background-color: peru;
+  background-image: url(../../client/src/assets/background3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Company {
   z-index: 1000;
-  background-color: bisque;
+  background-image: url(../../client/src/assets/background4.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .MainPlate {
@@ -144,11 +150,12 @@
   }
 }
 
-@media(max-width: 1000px){
-  .MainLayer{
+@media(max-width: 1000px) {
+  .MainLayer {
     flex-direction: column;
   }
-  .Inactive{
+
+  .Inactive {
     height: 5%;
     transition: width 1s;
   }

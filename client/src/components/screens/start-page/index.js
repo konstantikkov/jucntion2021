@@ -12,15 +12,14 @@ export const StartPage = ({ setStart, expanded, expand }) => {
 
     return (
         <div className={"ActiveStart StartPage"}
-           >
+        >
             <div className={s.wrapper}>
                 <div className={s.info_side}>
                     <div className={s.title}>
                         Project name
                     </div>
                     <div className={s.content}>
-                        Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-                    </div>
+                        In our time, the problem of environmental pollution by the release of carbon dioxide (CO2) in various industries is quite acute. Our project allows you to track harmful emissions in various European cities, as well as analyze various industries and highlight the most harmful ones, comparing their profit in relation to the amount of carbon dioxide emitted.                    </div>
                     <div className={s.button_block}>
                         <div className={s.but}>
                             <button onClick={() => {
@@ -28,7 +27,8 @@ export const StartPage = ({ setStart, expanded, expand }) => {
                                 expand(0)
                             }}><img src={leaf} /></button>
                         </div>
-                        <div className={s.but_text}>шобы узнать больше тыкай</div>
+                        <p />
+                        <div className={s.but_text}>Click to find out more</div>
                     </div>
                 </div>
                 <div className={s.map_side}>
