@@ -151,3 +151,11 @@ input{
     border-radius: 10px 0 0 10px ;
     transition: width 0.3s;
 }
+.Citations{
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    color: gray;
+}

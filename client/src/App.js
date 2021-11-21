@@ -25,16 +25,25 @@ function App() {
     const [allCompanies, setAllCompanies] = useState(() => JsonToObject('cities-companies'))
     const [allCountries, setAllCountries] = useState(() => JsonToObject('countries-cities'));
     const [allDescriptions, setAllDescriptions] = useState(() => JsonToObject('cities-descriptions'));
+    const [types, setTypes] = useState(()=>JsonToObject('description-to-types'))
+
+    console.log(types)
 
     const [countryName, setCountryName] = useState('at')
     const [cityName, setCityName] = useState('wien')
 
     const [selectedCountry, setSelectedCountry] = useState({})
     const [selectedCity, setSelectedCity] = useState({})
+    const [currentType, setCurrentType] = useState({})
+    const [selectedType, setSelectedType] = useState({})
 
     useEffect(() => {
         setSelectedCountry({ [countryName]: allCountries?.[countryName] })
     }, [countryName])
+
+    useEffect(()=>{
+        setCurrentType(types[selectedType])
+    }, [selectedType])
 
     useEffect(() => {
         setSelectedCity({
@@ -64,7 +73,7 @@ function App() {
                     !start && <React.Fragment>
                         <GlobalMapScreen countries={allCountries} setCountry={setCountryName} setCity={setCityName} expanded={screen === 0} expand={expand} />
                         <LocalMapScreen country={selectedCountry} setCountry={setCountryName} setCity={setCityName} expanded={screen === 1} expand={expand} />
-                        <CompanyScreen city={selectedCity} expanded={screen === 2} expand={expand} />
+                        <CompanyScreen type={currentType} setType={setSelectedType} city={selectedCity} expanded={screen === 2} expand={expand} />
                     </React.Fragment>
                 }
             </div>

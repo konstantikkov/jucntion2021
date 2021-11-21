@@ -7,7 +7,6 @@ import bg from "./background.svg"
 export const StartPage = ({ setStart, expanded, expand }) => {
     if (!expanded)
         return <div onClick={() => expand(-2)} className='InactiveStart StartPage'>
-            toggled
         </div>
 
     return (
