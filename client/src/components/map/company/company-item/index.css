@@ -2,8 +2,10 @@
     font-size: 28px;
     font-weight: 700;
     color: #184946;
+    cursor: pointer;
 }
 
 .ChosenCompanyItem {
     font-size: 28px;
+    cursor: pointer;
 }
