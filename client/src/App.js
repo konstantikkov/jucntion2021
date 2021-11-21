@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import './App.css';
+import './App.css'
+import './Map.css'
 import { GlobalMapScreen } from './components/screens/global-map-screen'
 import {LocalMapScreen} from "./components/screens/local-map-screen";
 import {CompanyScreen} from "./components/screens/company-screen";

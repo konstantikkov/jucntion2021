@@ -130,3 +130,14 @@
     opacity: 0;
   }
 }
+
+@media(max-width: 1000px){
+  .MainLayer{
+    flex-direction: column;
+  }
+  .Inactive{
+    height: 5%;
+    transition: width 1s;
+  }
+
+}

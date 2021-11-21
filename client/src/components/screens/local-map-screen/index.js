@@ -14,7 +14,7 @@ export const LocalMapScreen = ({country, setCountry, setCity, expanded, expand})
 
     return(
         <div onClick={() => !expanded?expand(1):''} className={`${!expanded?'Inactive':'Active'} Local`}>
-            <Map crop={1.4} viewBox='0 0 1440 1024' countries={country} clickCountry={()=>{}} clickCity={clickCity} namespace='local'/>
+            <Map expanded={expanded} viewBox='0 0 1000 1000' countries={country} clickCountry={()=>{}} clickCity={clickCity} namespace='local'/>
         </div>
     )
 }

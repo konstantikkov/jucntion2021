@@ -11,7 +11,7 @@ export const Map = ({ crop, europe, viewBox, countries, clickCountry, clickCity,
 
     return(
         <div
-            style={{width: `calc(100vh)`}}
+            style={{width: `calc(100vh - 4px)`}}
             className='Map'
         >
             <svg viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
