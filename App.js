@@ -6,7 +6,7 @@ const WebSocket = require('ws')
 
 const wss = new WebSocket.Server({port: 8888})
 
-let initializeCount = 0;
+let initializeCount = 50;
 
 let persons = {
 

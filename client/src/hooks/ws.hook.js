@@ -20,21 +20,29 @@ export const useWebSocket = (message, setMessage, setCo2) => {
                     let old = message
                     console.log(old)
                     old.shift()
-                    console.log(old)
                     setMessage(old)
-                },1000)
+                },2000)
             }
             setCo2(data.count)
         })
     }, [])
 
-    const commit = useCallback((client, value, message) => {
-        console.log(client)
-        socket.current.send(JSON.stringify({
-            client: client,
-            value: value,
-            message: message
-        }))
+    const commit = useCallback((money, setMoney, cost, client, value, message, setError, end) => {
+        if((((money + cost) >= 0 && cost < 0) || (cost > 0))&&!end) {
+            setMoney(money + cost)
+            socket.current.send(JSON.stringify({
+                client: client,
+                value: value,
+                message: message
+            }))
+            setError(false)
+        }
+        else if(end){
+            return
+        }
+        else{
+            setError(true)
+        }
     }, []);
 
     return({ initialize, commit })

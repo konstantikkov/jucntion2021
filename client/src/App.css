@@ -115,14 +115,19 @@
 
 
 .BadEvent {
-  background-color: red;
+  background-color: #FFC909;
 }
 
 .GoodEvent {
-  background-color: green;
+  background-color: #4CAF50;
+  color: white;
 }
 
 .Event {
+  font-size: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
   width: 100px;
   animation: 2s out forwards;
 }
@@ -133,6 +138,12 @@
   right: 0;
 }
 
+.End{
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
 
 @keyframes out {
   0% {

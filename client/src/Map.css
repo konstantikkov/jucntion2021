@@ -4,3 +4,150 @@ body{
 .Map{
     margin: auto;
 }
+.NativeChat{
+    z-index: 5000;
+}
+
+.Inactive .ChatWindow{
+    display: none;
+}
+.Inactive .ChatDescription{
+    display: none;
+}
+
+.Coin_{
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/images/coin.png");
+    background-size: cover;
+    vertical-align: middle
+}
+.Leaf_{
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/images/leaf.png");
+    background-size: cover;
+    vertical-align: middle
+}
+
+.Chat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ChatWindow{
+    display: block;
+    flex-direction: column;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 29px;
+}
+
+.ChatDescription{
+    display: flex;
+    margin-top: 15px;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 29px;
+    width: 323px;
+}
+
+
+@keyframes error {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.Error{
+    margin-top: 10px;
+    color:red;
+    font-weight: bold;
+    animation: 2s error;
+}
+.Coin{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-image: url("./assets/images/coin.png");
+    background-size: cover;
+}
+.Leaf{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-image: url("./assets/images/leaf.png");
+    background-size: cover;
+}
+.Balance{
+    display: flex;
+    flex-direction: row;
+}
+.EventButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.EventButton{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.EventButton:hover{
+    filter: blur(1px);
+    transition: filter 0.5s;
+}
+
+.EventButton:active{
+    filter: blur(0px);
+    transition: filter 0.2s;
+}
+
+.EventText{
+    width: 70%;
+}
+.Money{
+    width: 60px;
+    display: flex;
+    justify-content: right;
+}
+
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 3px;
+    border-radius: 10px;
+    border: solid darkgrey 1px;
+}
+
+.ProgressBar{
+    width: 100%;
+    display: flex;
+    height: 30px;
+    border: 1px solid black;
+    border: solid darkgrey 1px;
+    border-radius: 10px;
+}
+.Dire{
+    background-color: #FFC909;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    transition: width 0.3s;
+}
+.Radiant{
+    background-color: #4CAF50;
+    height: 100%;
+    border-radius: 10px 0 0 10px ;
+    transition: width 0.3s;
+}
