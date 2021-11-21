@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CompanyList } from "../../map/company";
 import { CompanyExpanded } from "../../map/company/company-expanded";
-import s from "./css/company.module.css"
+import "./index.css"
 
 
 
@@ -16,8 +16,8 @@ export const CompanyScreen = ({ city, expanded, expand }) => {
             onClick={() => !expanded ? expand(2) : ''}
             className={`${!expanded ? 'Inactive' : 'Active'} Company`}
         >
-            <div className={s.wrapper}>
-                <div className={s.name}>{city.name}</div>
+            <div className="wrapper">
+                <div className="name">{city.name}</div>
                 <CompanyList
                     chosenCompany={chosenCompany}
                     setChosenCompany={setChosenCompany}
