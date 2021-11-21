@@ -1,116 +1,126 @@
-.App{
+.App {
   width: 100%;
 }
+
 .MainLayer {
   width: 100%;
   display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.Active{
-  width:85%;
+
+.Active {
+  width: 85%;
   transition: width 1s;
 }
 
-.Active > .Map{
+.Active>.Map {
   opacity: 1;
   transition: opacity 1s;
 }
 
-.Inactive{
+.Inactive {
   width: 5%;
   transition: width 1s;
 }
 
-.Inactive > .Map{
+.Inactive>.Map {
   opacity: 0;
   transition: opacity 1s;
 }
 
-.StartPage{
-  background-color: #FFC909;
+.StartPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ActiveStart{
-  width:95%;
+.ActiveStart {
+  width: 95%;
   transition: width 1s;
 }
 
-.InactiveStart{
+.InactiveStart {
   width: 5%;
   transition: width 1s;
 }
 
-.Global{
+.Global {
   z-index: 100;
   background-color: white;
 }
 
-.Local{
+.Local {
   z-index: 500;
   background-color: peru;
 }
 
-.Company{
+.Company {
   z-index: 1000;
   background-color: bisque;
 }
-.MainPlate{
+
+.MainPlate {
   fill: #9CB7A3;
 }
 
-.CountryPlate{
+.CountryPlate {
   cursor: pointer;
   fill: #9CB7A3;
   transition: fill 1s;
 }
 
-.Country{
+.Country {
   transition: transform 1s ease-in-out;
 }
 
-.Country:hover{
+.Country:hover {
   transform: translateY(-10px);
   transition: transform 1s ease-in-out;
 }
 
-.Country:hover .CountryPlate{
-  fill:#FFC909;
+.Country:hover .CountryPlate {
+  fill: #FFC909;
   transition: fill 1s;
 }
 
-.CityDescription{
-   opacity: 0;
- }
-
-.CityDescriptionMini{
+.CityDescription {
   opacity: 0;
 }
 
-.Column{
+.CityDescriptionMini {
+  opacity: 0;
+}
+
+.Column {
   cursor: pointer;
 }
 
-.Country:hover .CityDescriptionMini{
+.Country:hover .CityDescriptionMini {
   transition: opacity 0.5s, transform 4s;
   opacity: 1;
 }
 
-.Column:hover + .CityDescription{
+.Column:hover+.CityDescription {
   transition: opacity 0.5s, transform 4s;
   opacity: 1;
 }
 
 
-.BadEvent{
+.BadEvent {
   background-color: red;
 }
-.GoodEvent{
+
+.GoodEvent {
   background-color: green;
 }
-.Event{
+
+.Event {
   width: 100px;
   animation: 2s out forwards;
 }
-.NativeChat{
+
+.NativeChat {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -118,14 +128,16 @@
 
 
 @keyframes out {
-  0%{
+  0% {
     opacity: 0.3;
   }
-  50%{
+
+  50% {
     transform: translateY(-50px);
     opacity: 1;
   }
-  100%{
+
+  100% {
     transform: translateY(-100px);
     opacity: 0;
   }
