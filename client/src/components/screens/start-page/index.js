@@ -18,7 +18,10 @@ export const StartPage = ({ setStart, expanded, expand }) => {
                         Project name
                     </div>
                     <div className={s.content}>
-                        In our time, the problem of environmental pollution by the release of carbon dioxide (CO2) in various industries is quite acute. Our project allows you to track harmful emissions in various European cities, as well as analyze various industries and highlight the most harmful ones, comparing their profit in relation to the amount of carbon dioxide emitted.                    </div>
+                        We present to you an interactive map of Europe, on which you can observe several companies and analyze their impact on the environment. We used a dataset that showed how much CO₂ companies of different fields emit. Using another dataset with sales we calculated the total amount of co2 companies produced versus the money they earned. This graphical data give us a better understanding of how much we contaminate the planet. Additionally, you can read facts and environmental advice that were gathered from proven sources. Potential shareholders will be able to form a rough understanding of fields and make their comparisons.
+                        <p />
+                        Additionally, to gamify the experience, we Implemented a simple app, that allows users to compete for our planet's future in real-time. You can choose between earning money, but harming the field or losing money by saving our planet. Exactly like in real life.
+                    </div>
                     <div className={s.button_block}>
                         <div className={s.but}>
                             <button onClick={() => {

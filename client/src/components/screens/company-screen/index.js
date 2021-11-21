@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { CompanyList } from "../../map/company";
+import Graphics from '../../map/company/company-data';
 import { CompanyExpanded } from "../../map/company/company-expanded";
 import "./index.css"
 
 
 
-export const CompanyScreen = ({type, setType, city, expanded, expand }) => {
+export const CompanyScreen = ({ type, setType, city, expanded, expand }) => {
     const [chosenCompany, setChosenCompany] = useState(0)
     console.log(chosenCompany)
     console.log(city)
     console.log(chosenCompany)
-    useEffect(()=>{
+    useEffect(() => {
         setType(city.entries[chosenCompany].type)
-    },[chosenCompany])
+    }, [chosenCompany])
     return (
         <div
             onClick={() => !expanded ? expand(2) : ''}
@@ -25,10 +26,18 @@ export const CompanyScreen = ({type, setType, city, expanded, expand }) => {
                     setChosenCompany={setChosenCompany}
                     entries={city.entries}
                 />
-                <CompanyExpanded
-                    entry={city.entries[chosenCompany]}
-                    type={type}
-                />
+
+                <div className="other">
+
+                    <CompanyExpanded
+                        entry={city.entries[chosenCompany]}
+                        type={type}
+                    />
+                    <Graphics
+                        total_sum={city.entries[chosenCompany].total_sum}
+                        per_euro={city.entries[chosenCompany].per_euro}
+                    />
+                </div>
             </div>
         </div >
 
